@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net48</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageOutputPath>../FileMagic.Bin</PackageOutputPath>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Version>1.0.0</Version>
+    <Authors>Aptivi</Authors>
+    <Description>FileMagic is a file type guesser library wrapper for libmagic from the file utility found in Unix and Linux.</Description>
+    <Copyright>Copyright © 2024 Aptivi</Copyright>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Aptivi/FileMagic</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>git://github.com/Aptivi/FileMagic.git</RepositoryUrl>
+    <PackageIcon>OfficialAppIcon-FileMagic-512.png</PackageIcon>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>hardware, information</PackageTags>
+    <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <LangVersion>latest</LangVersion>
+    <OutputPath>../FileMagic.Bin/</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="FileMagic.targets" Pack="True" PackagePath="build" />
+    <None Include="../assets/magic.mgc" Pack="True" PackagePath="magic" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="OfficialAppIcon-FileMagic-512.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FileMagic.Native\FileMagic.Native.csproj" />
+  </ItemGroup>
+
+</Project>

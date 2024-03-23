@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net48</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageOutputPath>../FileMagic.Bin</PackageOutputPath>
+    <OutputPath>../FileMagic.Bin/</OutputPath>
+    <Nullable>disable</Nullable>
+    <PackageId>FileMagic.Native</PackageId>
+    <Authors>Aptivi</Authors>
+    <Title>FileMagic.Native</Title>
+    <PackageDescription>libmagic native library wrapper for C#</PackageDescription>
+    <PackageTags>FileMagic;native;runtime;csharp;library</PackageTags>
+    <PackageProjectUrl>https://github.com/Aptivi/FileMagic</PackageProjectUrl>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <PackageIcon>OfficialAppIcon-FileMagic-512.png</PackageIcon>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/Aptivi/FileMagic.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Version>1.0.0</Version>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="runtimes\osx-x64\native\" />
+    <Folder Include="runtimes\linux-x64\native\" />
+    <Folder Include="runtimes\linux-x86\native\" />
+    <Folder Include="runtimes\win-x64\native\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- This is the only way to reliably copy all the runtimes -->
+    <None Include="runtimes\**\*.*" Pack="True" PackagePath="runtimes">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+
+    <!-- Necessary targets -->
+    <None Include="FileMagic.Native.targets" Pack="True" PackagePath="/" />
+
+    <!-- For packaging -->
+    <None Include="../FileMagic/OfficialAppIcon-FileMagic-512.png" Pack="true" PackagePath="\" />
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+    <PackageReference Include="NativeLand" Version="1.0.0" Condition="'$(TargetFramework)' == 'net48'" />
+    <PackageReference Include="SpecProbe.Software" Version="1.4.2" />
+  </ItemGroup>
+
+</Project>

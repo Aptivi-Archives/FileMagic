@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FileMagic.Console": {
+      "commandName": "Project",
+      "commandLineArgs": "FileMagic.dll"
+    }
+  }
+}
