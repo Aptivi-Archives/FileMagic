@@ -14,7 +14,7 @@
 
 # FileMagic
     
-*A Linux and Windows hardware information querying library.*
+*File magic information querying for C#, like the `file` command.*
 
 <br>
 <br>
