@@ -48,7 +48,7 @@ namespace FileMagic.Console
             string customMagic = null;
             if (args.Length > 1)
             {
-                customMagic = args[1];
+                customMagic = Path.GetFullPath(args[1]);
                 if (string.IsNullOrEmpty(customMagic))
                     TextWriterColor.WriteColor("Custom magic file path not specified. Using the defaults...", ConsoleColors.Yellow);
                 else
@@ -68,12 +68,14 @@ namespace FileMagic.Console
                 string[] magicPaths = MagicHandler.GetMagicPaths(customMagic);
                 TextWriterColor.WriteColor("Magic paths:", ConsoleColors.White);
                 ListWriterColor.WriteList(magicPaths, false);
+                string finalPath = File.Exists(magicPaths[0]) ? magicPaths[0] : customMagic;
+                ListEntryWriterColor.WriteListEntry("Final path", finalPath);
                 TextWriterColor.WriteColor("File info:", ConsoleColors.White);
-                string normalMagic = MagicHandler.GetMagicInfo(path, magicPaths[0]);
-                string normalMimeInfo = MagicHandler.GetMagicMimeInfo(path, magicPaths[0]);
-                string normalMimeType = MagicHandler.GetMagicMimeType(path, magicPaths[0]);
-                string normalExtensions = MagicHandler.GetMagicCustomType(path, magicPaths[0], MagicFlags.Extension);
-                string normalMimeEncoding = MagicHandler.GetMagicCustomType(path, magicPaths[0], MagicFlags.MimeEncoding);
+                string normalMagic = MagicHandler.GetMagicInfo(path, finalPath);
+                string normalMimeInfo = MagicHandler.GetMagicMimeInfo(path, finalPath);
+                string normalMimeType = MagicHandler.GetMagicMimeType(path, finalPath);
+                string normalExtensions = MagicHandler.GetMagicCustomType(path, finalPath, MagicFlags.Extension);
+                string normalMimeEncoding = MagicHandler.GetMagicCustomType(path, finalPath, MagicFlags.MimeEncoding);
                 ListEntryWriterColor.WriteListEntry("File description", normalMagic);
                 ListEntryWriterColor.WriteListEntry("File MIME info", normalMimeInfo);
                 ListEntryWriterColor.WriteListEntry("File MIME type", normalMimeType);
