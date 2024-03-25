@@ -133,6 +133,12 @@ namespace FileMagic.Native.Interop
         [DllImport("libmagic")]
         public static extern int magic_getparam(MagicSet* ms, MagicParameters param, IntPtr val);
 
+        /// <summary>
+        /// int magic_version(void)
+        /// </summary>
+        [DllImport("libmagic")]
+        public static extern int magic_version();
+
         internal static string GetError(MagicSet* handle)
         {
             var errorHandle = magic_error(handle);

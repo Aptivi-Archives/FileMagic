@@ -35,6 +35,12 @@ namespace FileMagic
         private static readonly string magicPathDefault = Path.GetFullPath(magicFileName);
 
         /// <summary>
+        /// libmagic version identification number
+        /// </summary>
+        public static int MagicVersionId =>
+            MagicHelper.magic_version();
+
+        /// <summary>
         /// Gets the file magic paths
         /// </summary>
         /// <param name="magicPath">Magic path. If null, the libmagic library tries to find the magic database files.</param>

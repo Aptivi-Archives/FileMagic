@@ -64,6 +64,7 @@ namespace FileMagic.Console
             // Now, analyze the file!
             try
             {
+                TextWriterColor.WriteColor($"libmagic version {MagicHandler.MagicVersionId}", ConsoleColors.Green);
                 string[] magicPaths = MagicHandler.GetMagicPaths(customMagic);
                 TextWriterColor.WriteColor("Magic paths:", ConsoleColors.White);
                 ListWriterColor.WriteList(magicPaths, false);
