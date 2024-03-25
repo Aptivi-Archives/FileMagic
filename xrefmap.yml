@@ -172,3 +172,16 @@ references:
   isSpec: "True"
   fullName: FileMagic.MagicHandler.GetMagicPaths
   nameWithType: MagicHandler.GetMagicPaths
+- uid: FileMagic.MagicHandler.MagicVersionId
+  name: MagicVersionId
+  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_MagicVersionId
+  commentId: P:FileMagic.MagicHandler.MagicVersionId
+  fullName: FileMagic.MagicHandler.MagicVersionId
+  nameWithType: MagicHandler.MagicVersionId
+- uid: FileMagic.MagicHandler.MagicVersionId*
+  name: MagicVersionId
+  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_MagicVersionId_
+  commentId: Overload:FileMagic.MagicHandler.MagicVersionId
+  isSpec: "True"
+  fullName: FileMagic.MagicHandler.MagicVersionId
+  nameWithType: MagicHandler.MagicVersionId
