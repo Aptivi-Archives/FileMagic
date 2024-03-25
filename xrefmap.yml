@@ -56,24 +56,24 @@ references:
   commentId: T:FileMagic.MagicHandler
   fullName: FileMagic.MagicHandler
   nameWithType: MagicHandler
-- uid: FileMagic.MagicHandler.GetMagicCustomType(System.String,FileMagic.Native.Interop.MagicFlags)
-  name: GetMagicCustomType(string, MagicFlags)
-  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicCustomType_System_String_FileMagic_Native_Interop_MagicFlags_
-  commentId: M:FileMagic.MagicHandler.GetMagicCustomType(System.String,FileMagic.Native.Interop.MagicFlags)
-  name.vb: GetMagicCustomType(String, MagicFlags)
-  fullName: FileMagic.MagicHandler.GetMagicCustomType(string, FileMagic.Native.Interop.MagicFlags)
-  fullName.vb: FileMagic.MagicHandler.GetMagicCustomType(String, FileMagic.Native.Interop.MagicFlags)
-  nameWithType: MagicHandler.GetMagicCustomType(string, MagicFlags)
-  nameWithType.vb: MagicHandler.GetMagicCustomType(String, MagicFlags)
-- uid: FileMagic.MagicHandler.GetMagicCustomType(System.String,System.String,FileMagic.Native.Interop.MagicFlags)
-  name: GetMagicCustomType(string, string, MagicFlags)
-  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicCustomType_System_String_System_String_FileMagic_Native_Interop_MagicFlags_
-  commentId: M:FileMagic.MagicHandler.GetMagicCustomType(System.String,System.String,FileMagic.Native.Interop.MagicFlags)
-  name.vb: GetMagicCustomType(String, String, MagicFlags)
-  fullName: FileMagic.MagicHandler.GetMagicCustomType(string, string, FileMagic.Native.Interop.MagicFlags)
-  fullName.vb: FileMagic.MagicHandler.GetMagicCustomType(String, String, FileMagic.Native.Interop.MagicFlags)
-  nameWithType: MagicHandler.GetMagicCustomType(string, string, MagicFlags)
-  nameWithType.vb: MagicHandler.GetMagicCustomType(String, String, MagicFlags)
+- uid: FileMagic.MagicHandler.GetMagicCustomType(System.String,FileMagic.Native.Interop.MagicFlags,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name: GetMagicCustomType(string, MagicFlags, MagicParameters, int)
+  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicCustomType_System_String_FileMagic_Native_Interop_MagicFlags_FileMagic_Native_Interop_MagicParameters_System_Int32_
+  commentId: M:FileMagic.MagicHandler.GetMagicCustomType(System.String,FileMagic.Native.Interop.MagicFlags,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name.vb: GetMagicCustomType(String, MagicFlags, MagicParameters, Integer)
+  fullName: FileMagic.MagicHandler.GetMagicCustomType(string, FileMagic.Native.Interop.MagicFlags, FileMagic.Native.Interop.MagicParameters, int)
+  fullName.vb: FileMagic.MagicHandler.GetMagicCustomType(String, FileMagic.Native.Interop.MagicFlags, FileMagic.Native.Interop.MagicParameters, Integer)
+  nameWithType: MagicHandler.GetMagicCustomType(string, MagicFlags, MagicParameters, int)
+  nameWithType.vb: MagicHandler.GetMagicCustomType(String, MagicFlags, MagicParameters, Integer)
+- uid: FileMagic.MagicHandler.GetMagicCustomType(System.String,System.String,FileMagic.Native.Interop.MagicFlags,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name: GetMagicCustomType(string, string, MagicFlags, MagicParameters, int)
+  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicCustomType_System_String_System_String_FileMagic_Native_Interop_MagicFlags_FileMagic_Native_Interop_MagicParameters_System_Int32_
+  commentId: M:FileMagic.MagicHandler.GetMagicCustomType(System.String,System.String,FileMagic.Native.Interop.MagicFlags,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name.vb: GetMagicCustomType(String, String, MagicFlags, MagicParameters, Integer)
+  fullName: FileMagic.MagicHandler.GetMagicCustomType(string, string, FileMagic.Native.Interop.MagicFlags, FileMagic.Native.Interop.MagicParameters, int)
+  fullName.vb: FileMagic.MagicHandler.GetMagicCustomType(String, String, FileMagic.Native.Interop.MagicFlags, FileMagic.Native.Interop.MagicParameters, Integer)
+  nameWithType: MagicHandler.GetMagicCustomType(string, string, MagicFlags, MagicParameters, int)
+  nameWithType.vb: MagicHandler.GetMagicCustomType(String, String, MagicFlags, MagicParameters, Integer)
 - uid: FileMagic.MagicHandler.GetMagicCustomType*
   name: GetMagicCustomType
   href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicCustomType_
@@ -81,24 +81,24 @@ references:
   isSpec: "True"
   fullName: FileMagic.MagicHandler.GetMagicCustomType
   nameWithType: MagicHandler.GetMagicCustomType
-- uid: FileMagic.MagicHandler.GetMagicInfo(System.String)
-  name: GetMagicInfo(string)
-  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicInfo_System_String_
-  commentId: M:FileMagic.MagicHandler.GetMagicInfo(System.String)
-  name.vb: GetMagicInfo(String)
-  fullName: FileMagic.MagicHandler.GetMagicInfo(string)
-  fullName.vb: FileMagic.MagicHandler.GetMagicInfo(String)
-  nameWithType: MagicHandler.GetMagicInfo(string)
-  nameWithType.vb: MagicHandler.GetMagicInfo(String)
-- uid: FileMagic.MagicHandler.GetMagicInfo(System.String,System.String)
-  name: GetMagicInfo(string, string)
-  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicInfo_System_String_System_String_
-  commentId: M:FileMagic.MagicHandler.GetMagicInfo(System.String,System.String)
-  name.vb: GetMagicInfo(String, String)
-  fullName: FileMagic.MagicHandler.GetMagicInfo(string, string)
-  fullName.vb: FileMagic.MagicHandler.GetMagicInfo(String, String)
-  nameWithType: MagicHandler.GetMagicInfo(string, string)
-  nameWithType.vb: MagicHandler.GetMagicInfo(String, String)
+- uid: FileMagic.MagicHandler.GetMagicInfo(System.String,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name: GetMagicInfo(string, MagicParameters, int)
+  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicInfo_System_String_FileMagic_Native_Interop_MagicParameters_System_Int32_
+  commentId: M:FileMagic.MagicHandler.GetMagicInfo(System.String,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name.vb: GetMagicInfo(String, MagicParameters, Integer)
+  fullName: FileMagic.MagicHandler.GetMagicInfo(string, FileMagic.Native.Interop.MagicParameters, int)
+  fullName.vb: FileMagic.MagicHandler.GetMagicInfo(String, FileMagic.Native.Interop.MagicParameters, Integer)
+  nameWithType: MagicHandler.GetMagicInfo(string, MagicParameters, int)
+  nameWithType.vb: MagicHandler.GetMagicInfo(String, MagicParameters, Integer)
+- uid: FileMagic.MagicHandler.GetMagicInfo(System.String,System.String,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name: GetMagicInfo(string, string, MagicParameters, int)
+  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicInfo_System_String_System_String_FileMagic_Native_Interop_MagicParameters_System_Int32_
+  commentId: M:FileMagic.MagicHandler.GetMagicInfo(System.String,System.String,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name.vb: GetMagicInfo(String, String, MagicParameters, Integer)
+  fullName: FileMagic.MagicHandler.GetMagicInfo(string, string, FileMagic.Native.Interop.MagicParameters, int)
+  fullName.vb: FileMagic.MagicHandler.GetMagicInfo(String, String, FileMagic.Native.Interop.MagicParameters, Integer)
+  nameWithType: MagicHandler.GetMagicInfo(string, string, MagicParameters, int)
+  nameWithType.vb: MagicHandler.GetMagicInfo(String, String, MagicParameters, Integer)
 - uid: FileMagic.MagicHandler.GetMagicInfo*
   name: GetMagicInfo
   href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicInfo_
@@ -106,24 +106,24 @@ references:
   isSpec: "True"
   fullName: FileMagic.MagicHandler.GetMagicInfo
   nameWithType: MagicHandler.GetMagicInfo
-- uid: FileMagic.MagicHandler.GetMagicMimeInfo(System.String)
-  name: GetMagicMimeInfo(string)
-  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicMimeInfo_System_String_
-  commentId: M:FileMagic.MagicHandler.GetMagicMimeInfo(System.String)
-  name.vb: GetMagicMimeInfo(String)
-  fullName: FileMagic.MagicHandler.GetMagicMimeInfo(string)
-  fullName.vb: FileMagic.MagicHandler.GetMagicMimeInfo(String)
-  nameWithType: MagicHandler.GetMagicMimeInfo(string)
-  nameWithType.vb: MagicHandler.GetMagicMimeInfo(String)
-- uid: FileMagic.MagicHandler.GetMagicMimeInfo(System.String,System.String)
-  name: GetMagicMimeInfo(string, string)
-  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicMimeInfo_System_String_System_String_
-  commentId: M:FileMagic.MagicHandler.GetMagicMimeInfo(System.String,System.String)
-  name.vb: GetMagicMimeInfo(String, String)
-  fullName: FileMagic.MagicHandler.GetMagicMimeInfo(string, string)
-  fullName.vb: FileMagic.MagicHandler.GetMagicMimeInfo(String, String)
-  nameWithType: MagicHandler.GetMagicMimeInfo(string, string)
-  nameWithType.vb: MagicHandler.GetMagicMimeInfo(String, String)
+- uid: FileMagic.MagicHandler.GetMagicMimeInfo(System.String,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name: GetMagicMimeInfo(string, MagicParameters, int)
+  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicMimeInfo_System_String_FileMagic_Native_Interop_MagicParameters_System_Int32_
+  commentId: M:FileMagic.MagicHandler.GetMagicMimeInfo(System.String,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name.vb: GetMagicMimeInfo(String, MagicParameters, Integer)
+  fullName: FileMagic.MagicHandler.GetMagicMimeInfo(string, FileMagic.Native.Interop.MagicParameters, int)
+  fullName.vb: FileMagic.MagicHandler.GetMagicMimeInfo(String, FileMagic.Native.Interop.MagicParameters, Integer)
+  nameWithType: MagicHandler.GetMagicMimeInfo(string, MagicParameters, int)
+  nameWithType.vb: MagicHandler.GetMagicMimeInfo(String, MagicParameters, Integer)
+- uid: FileMagic.MagicHandler.GetMagicMimeInfo(System.String,System.String,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name: GetMagicMimeInfo(string, string, MagicParameters, int)
+  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicMimeInfo_System_String_System_String_FileMagic_Native_Interop_MagicParameters_System_Int32_
+  commentId: M:FileMagic.MagicHandler.GetMagicMimeInfo(System.String,System.String,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name.vb: GetMagicMimeInfo(String, String, MagicParameters, Integer)
+  fullName: FileMagic.MagicHandler.GetMagicMimeInfo(string, string, FileMagic.Native.Interop.MagicParameters, int)
+  fullName.vb: FileMagic.MagicHandler.GetMagicMimeInfo(String, String, FileMagic.Native.Interop.MagicParameters, Integer)
+  nameWithType: MagicHandler.GetMagicMimeInfo(string, string, MagicParameters, int)
+  nameWithType.vb: MagicHandler.GetMagicMimeInfo(String, String, MagicParameters, Integer)
 - uid: FileMagic.MagicHandler.GetMagicMimeInfo*
   name: GetMagicMimeInfo
   href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicMimeInfo_
@@ -131,24 +131,24 @@ references:
   isSpec: "True"
   fullName: FileMagic.MagicHandler.GetMagicMimeInfo
   nameWithType: MagicHandler.GetMagicMimeInfo
-- uid: FileMagic.MagicHandler.GetMagicMimeType(System.String)
-  name: GetMagicMimeType(string)
-  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicMimeType_System_String_
-  commentId: M:FileMagic.MagicHandler.GetMagicMimeType(System.String)
-  name.vb: GetMagicMimeType(String)
-  fullName: FileMagic.MagicHandler.GetMagicMimeType(string)
-  fullName.vb: FileMagic.MagicHandler.GetMagicMimeType(String)
-  nameWithType: MagicHandler.GetMagicMimeType(string)
-  nameWithType.vb: MagicHandler.GetMagicMimeType(String)
-- uid: FileMagic.MagicHandler.GetMagicMimeType(System.String,System.String)
-  name: GetMagicMimeType(string, string)
-  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicMimeType_System_String_System_String_
-  commentId: M:FileMagic.MagicHandler.GetMagicMimeType(System.String,System.String)
-  name.vb: GetMagicMimeType(String, String)
-  fullName: FileMagic.MagicHandler.GetMagicMimeType(string, string)
-  fullName.vb: FileMagic.MagicHandler.GetMagicMimeType(String, String)
-  nameWithType: MagicHandler.GetMagicMimeType(string, string)
-  nameWithType.vb: MagicHandler.GetMagicMimeType(String, String)
+- uid: FileMagic.MagicHandler.GetMagicMimeType(System.String,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name: GetMagicMimeType(string, MagicParameters, int)
+  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicMimeType_System_String_FileMagic_Native_Interop_MagicParameters_System_Int32_
+  commentId: M:FileMagic.MagicHandler.GetMagicMimeType(System.String,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name.vb: GetMagicMimeType(String, MagicParameters, Integer)
+  fullName: FileMagic.MagicHandler.GetMagicMimeType(string, FileMagic.Native.Interop.MagicParameters, int)
+  fullName.vb: FileMagic.MagicHandler.GetMagicMimeType(String, FileMagic.Native.Interop.MagicParameters, Integer)
+  nameWithType: MagicHandler.GetMagicMimeType(string, MagicParameters, int)
+  nameWithType.vb: MagicHandler.GetMagicMimeType(String, MagicParameters, Integer)
+- uid: FileMagic.MagicHandler.GetMagicMimeType(System.String,System.String,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name: GetMagicMimeType(string, string, MagicParameters, int)
+  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicMimeType_System_String_System_String_FileMagic_Native_Interop_MagicParameters_System_Int32_
+  commentId: M:FileMagic.MagicHandler.GetMagicMimeType(System.String,System.String,FileMagic.Native.Interop.MagicParameters,System.Int32)
+  name.vb: GetMagicMimeType(String, String, MagicParameters, Integer)
+  fullName: FileMagic.MagicHandler.GetMagicMimeType(string, string, FileMagic.Native.Interop.MagicParameters, int)
+  fullName.vb: FileMagic.MagicHandler.GetMagicMimeType(String, String, FileMagic.Native.Interop.MagicParameters, Integer)
+  nameWithType: MagicHandler.GetMagicMimeType(string, string, MagicParameters, int)
+  nameWithType.vb: MagicHandler.GetMagicMimeType(String, String, MagicParameters, Integer)
 - uid: FileMagic.MagicHandler.GetMagicMimeType*
   name: GetMagicMimeType
   href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicMimeType_
