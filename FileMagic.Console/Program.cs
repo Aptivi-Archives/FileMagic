@@ -55,7 +55,7 @@ namespace FileMagic.Console
                 {
                     if (!File.Exists(customMagic))
                     {
-                        TextWriterColor.WriteColor($"The custom magic database file {path} doesn't exist.", ConsoleColors.Red);
+                        TextWriterColor.WriteColor($"The custom magic database file {customMagic} doesn't exist.", ConsoleColors.Red);
                         return 3;
                     }
                 }
