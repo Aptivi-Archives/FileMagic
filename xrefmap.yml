@@ -156,3 +156,19 @@ references:
   isSpec: "True"
   fullName: FileMagic.MagicHandler.GetMagicMimeType
   nameWithType: MagicHandler.GetMagicMimeType
+- uid: FileMagic.MagicHandler.GetMagicPaths(System.String)
+  name: GetMagicPaths(string)
+  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicPaths_System_String_
+  commentId: M:FileMagic.MagicHandler.GetMagicPaths(System.String)
+  name.vb: GetMagicPaths(String)
+  fullName: FileMagic.MagicHandler.GetMagicPaths(string)
+  fullName.vb: FileMagic.MagicHandler.GetMagicPaths(String)
+  nameWithType: MagicHandler.GetMagicPaths(string)
+  nameWithType.vb: MagicHandler.GetMagicPaths(String)
+- uid: FileMagic.MagicHandler.GetMagicPaths*
+  name: GetMagicPaths
+  href: api/FileMagic.MagicHandler.html#FileMagic_MagicHandler_GetMagicPaths_
+  commentId: Overload:FileMagic.MagicHandler.GetMagicPaths
+  isSpec: "True"
+  fullName: FileMagic.MagicHandler.GetMagicPaths
+  nameWithType: MagicHandler.GetMagicPaths
