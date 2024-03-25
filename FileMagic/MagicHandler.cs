@@ -37,54 +37,68 @@ namespace FileMagic
         /// Gets the file magic information
         /// </summary>
         /// <param name="filePath">Target file path</param>
-        public static string GetMagicInfo(string filePath) =>
-            GetMagicInfo(filePath, magicPathDefault);
+        /// <param name="parameter">Parameter to use</param>
+        /// <param name="paramValue">Parameter value to set to</param>
+        public static string GetMagicInfo(string filePath, MagicParameters parameter = MagicParameters.None, int paramValue = 0) =>
+            GetMagicInfo(filePath, magicPathDefault, parameter, paramValue);
 
         /// <summary>
         /// Gets the file magic information
         /// </summary>
         /// <param name="filePath">Target file path</param>
         /// <param name="magicPath">Path to the file magic database</param>
-        public static string GetMagicInfo(string filePath, string magicPath) =>
-            HandleMagic(filePath, !string.IsNullOrEmpty(magicPath) ? magicPath : magicPathDefault, MagicFlags.None);
+        /// <param name="parameter">Parameter to use</param>
+        /// <param name="paramValue">Parameter value to set to</param>
+        public static string GetMagicInfo(string filePath, string magicPath, MagicParameters parameter = MagicParameters.None, int paramValue = 0) =>
+            HandleMagic(filePath, !string.IsNullOrEmpty(magicPath) ? magicPath : magicPathDefault, MagicFlags.None, parameter, paramValue);
 
         /// <summary>
         /// Gets the file magic Mime information
         /// </summary>
         /// <param name="filePath">Target file path</param>
-        public static string GetMagicMimeInfo(string filePath) =>
-            GetMagicMimeInfo(filePath, magicPathDefault);
+        /// <param name="parameter">Parameter to use</param>
+        /// <param name="paramValue">Parameter value to set to</param>
+        public static string GetMagicMimeInfo(string filePath, MagicParameters parameter = MagicParameters.None, int paramValue = 0) =>
+            GetMagicMimeInfo(filePath, magicPathDefault, parameter, paramValue);
 
         /// <summary>
         /// Gets the file magic Mime information
         /// </summary>
         /// <param name="filePath">Target file path</param>
         /// <param name="magicPath">Path to the file magic database</param>
-        public static string GetMagicMimeInfo(string filePath, string magicPath) =>
-            HandleMagic(filePath, !string.IsNullOrEmpty(magicPath) ? magicPath : magicPathDefault, MagicFlags.Mime);
+        /// <param name="parameter">Parameter to use</param>
+        /// <param name="paramValue">Parameter value to set to</param>
+        public static string GetMagicMimeInfo(string filePath, string magicPath, MagicParameters parameter = MagicParameters.None, int paramValue = 0) =>
+            HandleMagic(filePath, !string.IsNullOrEmpty(magicPath) ? magicPath : magicPathDefault, MagicFlags.Mime, parameter, paramValue);
 
         /// <summary>
         /// Gets the file magic Mime type information
         /// </summary>
         /// <param name="filePath">Target file path</param>
-        public static string GetMagicMimeType(string filePath) =>
-            GetMagicMimeType(filePath, magicPathDefault);
+        /// <param name="parameter">Parameter to use</param>
+        /// <param name="paramValue">Parameter value to set to</param>
+        public static string GetMagicMimeType(string filePath, MagicParameters parameter = MagicParameters.None, int paramValue = 0) =>
+            GetMagicMimeType(filePath, magicPathDefault, parameter, paramValue);
 
         /// <summary>
         /// Gets the file magic Mime type information
         /// </summary>
         /// <param name="filePath">Target file path</param>
         /// <param name="magicPath">Path to the file magic database</param>
-        public static string GetMagicMimeType(string filePath, string magicPath) =>
-            HandleMagic(filePath, !string.IsNullOrEmpty(magicPath) ? magicPath : magicPathDefault, MagicFlags.MimeType);
+        /// <param name="parameter">Parameter to use</param>
+        /// <param name="paramValue">Parameter value to set to</param>
+        public static string GetMagicMimeType(string filePath, string magicPath, MagicParameters parameter = MagicParameters.None, int paramValue = 0) =>
+            HandleMagic(filePath, !string.IsNullOrEmpty(magicPath) ? magicPath : magicPathDefault, MagicFlags.MimeType, parameter, paramValue);
 
         /// <summary>
         /// Gets the file magic Mime type information
         /// </summary>
         /// <param name="filePath">Target file path</param>
         /// <param name="flags">Magic flags to customize the output and the behavior of the native library</param>
-        public static string GetMagicCustomType(string filePath, MagicFlags flags) =>
-            GetMagicCustomType(filePath, magicPathDefault, flags);
+        /// <param name="parameter">Parameter to use</param>
+        /// <param name="paramValue">Parameter value to set to</param>
+        public static string GetMagicCustomType(string filePath, MagicFlags flags, MagicParameters parameter = MagicParameters.None, int paramValue = 0) =>
+            GetMagicCustomType(filePath, magicPathDefault, flags, parameter, paramValue);
 
         /// <summary>
         /// Gets the file magic Mime type information
@@ -92,10 +106,12 @@ namespace FileMagic
         /// <param name="filePath">Target file path</param>
         /// <param name="magicPath">Path to the file magic database</param>
         /// <param name="flags">Magic flags to customize the output and the behavior of the native library</param>
-        public static string GetMagicCustomType(string filePath, string magicPath, MagicFlags flags) =>
-            HandleMagic(filePath, !string.IsNullOrEmpty(magicPath) ? magicPath : magicPathDefault, flags);
+        /// <param name="parameter">Parameter to use</param>
+        /// <param name="paramValue">Parameter value to set to</param>
+        public static string GetMagicCustomType(string filePath, string magicPath, MagicFlags flags, MagicParameters parameter = MagicParameters.None, int paramValue = 0) =>
+            HandleMagic(filePath, !string.IsNullOrEmpty(magicPath) ? magicPath : magicPathDefault, flags, parameter, paramValue);
 
-        internal static string HandleMagic(string filePath, string magicPath, MagicFlags flags)
+        internal static string HandleMagic(string filePath, string magicPath, MagicFlags flags, MagicParameters parameter = MagicParameters.None, int paramValue = 0)
         {
             IntPtr magicStringHandle;
 
@@ -110,6 +126,33 @@ namespace FileMagic
             {
                 // Open the magic handle
                 var handle = MagicHelper.magic_open(flags);
+
+                // Check to see if we're going to set the parameter
+                if (parameter != MagicParameters.None)
+                {
+                    var valuePtr = (IntPtr)paramValue;
+                    var valueHandle = Marshal.AllocHGlobal(IntPtr.Size);
+                    var valueHandleResult = Marshal.AllocHGlobal(IntPtr.Size);
+                    Marshal.WriteIntPtr(valueHandle, valuePtr);
+
+                    // Set the parameter
+                    int paramResult = MagicHelper.magic_setparam(handle, parameter, valueHandle);
+                    if (paramResult != 0)
+                        throw new MagicException($"Failed to set parameter {parameter} to {paramValue}: [{MagicHelper.GetErrorNumber(handle)}] {MagicHelper.GetError(handle)}");
+
+                    // Validate the parameter
+                    IntPtr result;
+                    int paramGetResult = MagicHelper.magic_getparam(handle, parameter, valueHandleResult);
+                    if (paramGetResult != 0)
+                        throw new MagicException($"Failed to get parameter {parameter} value: [{MagicHelper.GetErrorNumber(handle)}] {MagicHelper.GetError(handle)}");
+                    result = Marshal.ReadIntPtr(valueHandleResult);
+                    if (result != valuePtr)
+                        throw new MagicException($"Failed to validate parameter {parameter} for value {paramValue} (got {result}): [{MagicHelper.GetErrorNumber(handle)}] {MagicHelper.GetError(handle)}");
+
+                    // Free the addresses
+                    Marshal.FreeHGlobal(valueHandle);
+                    Marshal.FreeHGlobal(valueHandleResult);
+                }
 
                 // Use this handle to load the magic database
                 int loadResult = MagicHelper.magic_load(handle, magicPath);

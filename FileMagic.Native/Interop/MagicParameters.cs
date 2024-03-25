@@ -25,6 +25,10 @@ namespace FileMagic.Native.Interop
     public enum MagicParameters
     {
         /// <summary>
+        /// No parameters
+        /// </summary>
+        None = -1,
+        /// <summary>
         /// #define MAGIC_PARAM_INDIR_MAX		0
         /// </summary>
         InDirMax = 0,

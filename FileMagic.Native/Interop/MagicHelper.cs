@@ -125,13 +125,13 @@ namespace FileMagic.Native.Interop
         /// file_public int magic_setparam(struct magic_set *ms, int param, const void *val)
         /// </summary>
         [DllImport("libmagic")]
-        public static extern int magic_setparam(MagicSet* ms, MagicParameters param, [In] IntPtr val);
+        public static extern int magic_setparam(MagicSet* ms, MagicParameters param, IntPtr val);
 
         /// <summary>
         /// file_public int magic_getparam(struct magic_set *ms, int param, void *val)
         /// </summary>
         [DllImport("libmagic")]
-        public static extern int magic_getparam(MagicSet* ms, MagicParameters param, [Out] IntPtr val);
+        public static extern int magic_getparam(MagicSet* ms, MagicParameters param, IntPtr val);
 
         internal static string GetError(MagicSet* handle)
         {
