@@ -19,6 +19,7 @@
 
 using FileMagic.Native;
 using FileMagic.Native.Interop;
+using SpecProbe.Platform;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -32,6 +33,19 @@ namespace FileMagic
 	{
         private const string magicFileName = "magic.mgc";
         private static readonly string magicPathDefault = Path.GetFullPath(magicFileName);
+
+        /// <summary>
+        /// Gets the file magic paths
+        /// </summary>
+        /// <param name="magicPath">Magic path. If null, the libmagic library tries to find the magic database files.</param>
+        /// <returns>A colon separated list of magic locations</returns>
+        public static string[] GetMagicPaths(string magicPath = null)
+        {
+            var pathsStringHandle = MagicHelper.magic_getpath(magicPath, 0);
+            string pathsString = Marshal.PtrToStringAnsi(pathsStringHandle);
+            string[] paths = PlatformHelper.IsOnWindows() ? [pathsString] : pathsString.Split(':');
+            return paths;
+        }
 
         /// <summary>
         /// Gets the file magic information

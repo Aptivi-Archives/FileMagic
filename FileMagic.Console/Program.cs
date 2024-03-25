@@ -45,7 +45,7 @@ namespace FileMagic.Console
             }
 
             // Check for custom magic
-            string customMagic = "";
+            string customMagic = null;
             if (args.Length > 1)
             {
                 customMagic = args[1];
@@ -64,11 +64,15 @@ namespace FileMagic.Console
             // Now, analyze the file!
             try
             {
-                string normalMagic = MagicHandler.GetMagicInfo(path, customMagic);
-                string normalMimeInfo = MagicHandler.GetMagicMimeInfo(path, customMagic);
-                string normalMimeType = MagicHandler.GetMagicMimeType(path, customMagic);
-                string normalExtensions = MagicHandler.GetMagicCustomType(path, customMagic, MagicFlags.Extension);
-                string normalMimeEncoding = MagicHandler.GetMagicCustomType(path, customMagic, MagicFlags.MimeEncoding);
+                string[] magicPaths = MagicHandler.GetMagicPaths(customMagic);
+                TextWriterColor.WriteColor("Magic paths:", ConsoleColors.White);
+                ListWriterColor.WriteList(magicPaths, false);
+                TextWriterColor.WriteColor("File info:", ConsoleColors.White);
+                string normalMagic = MagicHandler.GetMagicInfo(path, magicPaths[0]);
+                string normalMimeInfo = MagicHandler.GetMagicMimeInfo(path, magicPaths[0]);
+                string normalMimeType = MagicHandler.GetMagicMimeType(path, magicPaths[0]);
+                string normalExtensions = MagicHandler.GetMagicCustomType(path, magicPaths[0], MagicFlags.Extension);
+                string normalMimeEncoding = MagicHandler.GetMagicCustomType(path, magicPaths[0], MagicFlags.MimeEncoding);
                 ListEntryWriterColor.WriteListEntry("File description", normalMagic);
                 ListEntryWriterColor.WriteListEntry("File MIME info", normalMimeInfo);
                 ListEntryWriterColor.WriteListEntry("File MIME type", normalMimeType);
