@@ -35,8 +35,8 @@ fi
 echo Packing binary...
 cd "../FileMagic.Bin/net8.0/" && "$zippath" -r /tmp/$version-bin.zip . && cd -
 cd "../FileMagic.Bin/net48/" && "$zippath" -r /tmp/$version-bin-48.zip . && cd -
-cd "../FileMagic.ConsoleTest.Bin/net8.0/" && "$zippath" -r /tmp/$version-bin.zip . && cd -
-cd "../FileMagic.ConsoleTest.Bin/net48/" && "$zippath" -r /tmp/$version-bin-48.zip . && cd -
+cd "../FileMagic.Console.Bin/net8.0/" && "$zippath" -r /tmp/$version-demo.zip . && cd -
+cd "../FileMagic.Console.Bin/net48/" && "$zippath" -r /tmp/$version-demo-48.zip . && cd -
 if [ ! $? == 0 ]; then
 	echo Packing using zip failed.
 	exit 1

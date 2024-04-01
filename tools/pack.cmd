@@ -25,8 +25,8 @@ if "%releaseconfig%" == "" set releaseconfig=Release
 echo Packing binary...
 "%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%version%-bin.zip "..\FileMagic.Bin\net8.0\*"
 "%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%version%-bin-48.zip "..\FileMagic.Bin\net48\*"
-"%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%version%-demo.zip "..\FileMagic.ConsoleTest.Bin\net8.0\*"
-"%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%version%-demo-48.zip "..\FileMagic.ConsoleTest.Bin\net48\*"
+"%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%version%-demo.zip "..\FileMagic.Console.Bin\net8.0\*"
+"%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%version%-demo-48.zip "..\FileMagic.Console.Bin\net48\*"
 if %errorlevel% == 0 goto :complete
 echo There was an error trying to pack binary (%errorlevel%).
 goto :finished
