@@ -9,7 +9,7 @@
     <PackageId>FileMagicManaged</PackageId>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <Version>1.0.0</Version>
+    <Version>1.0.0.1</Version>
     <Authors>Aptivi</Authors>
     <Description>FileMagic is a file type guesser library wrapper for libmagic from the file utility found in Unix and Linux.</Description>
     <Copyright>Copyright © 2024 Aptivi</Copyright>
