@@ -37,7 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="FileMagic.targets" Pack="True" PackagePath="build" />
+    <None Include="FileMagicManaged.targets" Pack="True" PackagePath="build" />
     <None Include="../assets/magic.mgc" Pack="True" PackagePath="magic" CopyToOutputDirectory="Always" />
   </ItemGroup>
 
