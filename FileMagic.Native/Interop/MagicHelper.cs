@@ -59,7 +59,7 @@ namespace FileMagic.Native.Interop
         /// file_public const char *magic_getpath(const char *magicfile, int action)
         /// </summary>
         [DllImport("libmagic")]
-        public static extern IntPtr magic_getpath([In][MarshalAs(UnmanagedType.LPStr)] string magicfile, int action);
+        public static extern IntPtr magic_getpath(IntPtr magicfile, int action);
 
         /// <summary>
         /// file_public const char *magic_file(struct magic_set *ms, const char *inname)

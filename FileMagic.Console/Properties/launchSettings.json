@@ -3,6 +3,18 @@
     "FileMagic.Console": {
       "commandName": "Project",
       "commandLineArgs": "FileMagic.dll"
+    },
+    "FileMagic.Console - systemwide": {
+      "commandName": "Project",
+      "commandLineArgs": "FileMagic.dll -s"
+    },
+    "FileMagic.Console - verbose": {
+      "commandName": "Project",
+      "commandLineArgs": "FileMagic.dll -v"
+    },
+    "FileMagic.Console - verbose, systemwide": {
+      "commandName": "Project",
+      "commandLineArgs": "FileMagic.dll -s -v"
     }
   }
 }

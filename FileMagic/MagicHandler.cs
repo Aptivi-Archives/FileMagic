@@ -44,11 +44,21 @@ namespace FileMagic
         /// Gets the file magic paths
         /// </summary>
         /// <param name="magicPath">Magic path. If null, the libmagic library tries to find the magic database files.</param>
+        /// <param name="systemWide">Uses system-wide magic path if <paramref name="magicPath"/> is null. This has no effect if that path is not null</param>
         /// <returns>A colon separated list of magic locations</returns>
-        public static string[] GetMagicPaths(string magicPath = null)
+        public static string[] GetMagicPaths(string magicPath = null, bool systemWide = false)
         {
-            var pathsStringHandle = MagicHelper.magic_getpath(magicPath, 0);
+            // We need to make another magicPath handle, because if we directly passed the magicPath string, we'll get corrupt
+            // string. We need to make a native handle to our string.
+            var magicPathHandle = !string.IsNullOrEmpty(magicPath) ? Marshal.StringToHGlobalAnsi(magicPath) : IntPtr.Zero;
+            var pathsStringHandle = MagicHelper.magic_getpath(magicPathHandle, systemWide ? 1 : 0);
             string pathsString = Marshal.PtrToStringAnsi(pathsStringHandle);
+
+            // Dispose of our magic path handle
+            if (magicPathHandle != IntPtr.Zero)
+                Marshal.FreeHGlobal(magicPathHandle);
+
+            // Now, separate the paths by colon. If on Windows, it'll never return more than one path.
             string[] paths = PlatformHelper.IsOnWindows() ? [pathsString] : pathsString.Split(':');
             return paths;
         }

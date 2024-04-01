@@ -20,6 +20,7 @@
 using FileMagic.Native.Interop;
 using System;
 using System.IO;
+using System.Linq;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -29,6 +30,10 @@ namespace FileMagic.Console
     {
         static int Main(string[] args)
         {
+            bool systemwide = args.Contains("-s");
+            bool verbose = args.Contains("-v");
+            args = args.Except(["-s", "-v"]).ToArray();
+
             // Check the arguments
             if (args.Length == 0)
             {
@@ -64,23 +69,38 @@ namespace FileMagic.Console
             // Now, analyze the file!
             try
             {
-                TextWriterColor.WriteColor($"libmagic version {MagicHandler.MagicVersionId}", ConsoleColors.Green);
                 string[] magicPaths = MagicHandler.GetMagicPaths(customMagic);
-                TextWriterColor.WriteColor("Magic paths:", ConsoleColors.White);
-                ListWriterColor.WriteList(magicPaths, false);
-                string finalPath = File.Exists(magicPaths[0]) ? magicPaths[0] : customMagic;
-                ListEntryWriterColor.WriteListEntry("Final path", finalPath);
-                TextWriterColor.WriteColor("File info:", ConsoleColors.White);
+                string[] magicPathsSystemwide = MagicHandler.GetMagicPaths(customMagic, true);
+                string[] magicPathsProbed = MagicHandler.GetMagicPaths(null);
+                string[] magicPathsProbedSystemwide = MagicHandler.GetMagicPaths(null, true);
+                string finalPath = systemwide ? magicPathsProbedSystemwide[0] : File.Exists(magicPaths[0]) ? magicPaths[0] : File.Exists(customMagic) ? customMagic : "";
+                if (verbose)
+                {
+                    TextWriterColor.WriteColor($"libmagic version {MagicHandler.MagicVersionId}", ConsoleColors.Green);
+                    TextWriterColor.WriteColor("Magic paths:", ConsoleColors.White);
+                    ListWriterColor.WriteList(magicPaths, false);
+                    TextWriterColor.WriteColor("Magic paths (systemwide):", ConsoleColors.White);
+                    ListWriterColor.WriteList(magicPathsSystemwide, false);
+                    TextWriterColor.WriteColor("Magic paths (probed):", ConsoleColors.White);
+                    ListWriterColor.WriteList(magicPathsProbed, false);
+                    TextWriterColor.WriteColor("Magic paths (probed, systemwide):", ConsoleColors.White);
+                    ListWriterColor.WriteList(magicPathsProbedSystemwide, false);
+                    ListEntryWriterColor.WriteListEntry("Final path", string.IsNullOrEmpty(finalPath) ? "default path" : finalPath);
+                    TextWriterColor.WriteColor("File info:", ConsoleColors.White);
+                }
                 string normalMagic = MagicHandler.GetMagicInfo(path, finalPath);
-                string normalMimeInfo = MagicHandler.GetMagicMimeInfo(path, finalPath);
-                string normalMimeType = MagicHandler.GetMagicMimeType(path, finalPath);
-                string normalExtensions = MagicHandler.GetMagicCustomType(path, finalPath, MagicFlags.Extension);
-                string normalMimeEncoding = MagicHandler.GetMagicCustomType(path, finalPath, MagicFlags.MimeEncoding);
                 ListEntryWriterColor.WriteListEntry("File description", normalMagic);
-                ListEntryWriterColor.WriteListEntry("File MIME info", normalMimeInfo);
-                ListEntryWriterColor.WriteListEntry("File MIME type", normalMimeType);
-                ListEntryWriterColor.WriteListEntry("File MIME encoding", normalMimeEncoding);
-                ListEntryWriterColor.WriteListEntry("Alternative extensions", normalExtensions);
+                if (verbose)
+                {
+                    string normalMimeInfo = MagicHandler.GetMagicMimeInfo(path, finalPath);
+                    string normalMimeType = MagicHandler.GetMagicMimeType(path, finalPath);
+                    string normalExtensions = MagicHandler.GetMagicCustomType(path, finalPath, MagicFlags.Extension);
+                    string normalMimeEncoding = MagicHandler.GetMagicCustomType(path, finalPath, MagicFlags.MimeEncoding);
+                    ListEntryWriterColor.WriteListEntry("File MIME info", normalMimeInfo);
+                    ListEntryWriterColor.WriteListEntry("File MIME type", normalMimeType);
+                    ListEntryWriterColor.WriteListEntry("File MIME encoding", normalMimeEncoding);
+                    ListEntryWriterColor.WriteListEntry("Alternative extensions", normalExtensions);
+                }
             }
             catch (Exception ex)
             {
