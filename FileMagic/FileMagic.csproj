@@ -5,7 +5,6 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageOutputPath>../FileMagic.Bin</PackageOutputPath>
     <PackageId>FileMagicManaged</PackageId>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -23,7 +22,6 @@
     <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
     <EnableNETAnalyzers>false</EnableNETAnalyzers>
     <LangVersion>latest</LangVersion>
-    <OutputPath>../FileMagic.Bin/</OutputPath>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\aptivi_snk.snk</AssemblyOriginatorKeyFile>

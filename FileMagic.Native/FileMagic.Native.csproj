@@ -4,8 +4,6 @@
     <TargetFrameworks>net8.0;net48</TargetFrameworks>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageOutputPath>../FileMagic.Bin</PackageOutputPath>
-    <OutputPath>../FileMagic.Bin/</OutputPath>
     <Nullable>disable</Nullable>
     <PackageId>FileMagic.Native</PackageId>
     <Authors>Aptivi</Authors>
