@@ -4,9 +4,7 @@
     <TargetFrameworks>net8.0;net48</TargetFrameworks>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Nullable>disable</Nullable>
     <PackageId>FileMagic.Native</PackageId>
-    <Authors>Aptivi</Authors>
     <Title>FileMagic.Native</Title>
     <PackageDescription>libmagic native library wrapper for C#</PackageDescription>
     <PackageTags>FileMagic;native;runtime;csharp;library</PackageTags>
@@ -18,10 +16,6 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/Aptivi/FileMagic.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Version>1.0.0.1</Version>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
-    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -45,13 +39,7 @@
     <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
-  <PropertyGroup>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-  </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
     <PackageReference Include="NativeLand" Version="1.0.1" Condition="'$(TargetFramework)' == 'net48'" />
     <PackageReference Include="SpecProbe.Software" Version="1.4.2" />
   </ItemGroup>

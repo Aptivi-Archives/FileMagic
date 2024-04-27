@@ -8,10 +8,7 @@
     <PackageId>FileMagicManaged</PackageId>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <Version>1.0.0.1</Version>
-    <Authors>Aptivi</Authors>
     <Description>FileMagic is a file type guesser library wrapper for libmagic from the file utility found in Unix and Linux.</Description>
-    <Copyright>Copyright © 2024 Aptivi</Copyright>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Aptivi/FileMagic</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -21,10 +18,7 @@
     <PackageTags>hardware, information</PackageTags>
     <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
     <EnableNETAnalyzers>false</EnableNETAnalyzers>
-    <LangVersion>latest</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -41,15 +35,6 @@
 
   <ItemGroup>
     <None Include="OfficialAppIcon-FileMagic-512.png" Pack="true" PackagePath="\" />
-  </ItemGroup>
-
-  <PropertyGroup>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
